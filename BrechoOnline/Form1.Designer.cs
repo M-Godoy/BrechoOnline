@@ -28,26 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.btnLogin = new System.Windows.Forms.Button();
             this.txbName = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
-            this.lblStyle = new System.Windows.Forms.Label();
-            this.txbStyle = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.ckbClient = new System.Windows.Forms.CheckBox();
+            this.ckbSeller = new System.Windows.Forms.CheckBox();
+            this.ckbServiceterms = new System.Windows.Forms.CheckBox();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.txbEmail = new System.Windows.Forms.TextBox();
+            this.lblPassword = new System.Windows.Forms.Label();
+            this.txbPassword = new System.Windows.Forms.TextBox();
+            this.lblContat = new System.Windows.Forms.Label();
+            this.txbContat = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnLogin
             // 
-            this.btnLogin.BackColor = System.Drawing.Color.GhostWhite;
+            this.btnLogin.BackColor = System.Drawing.Color.Black;
+            this.btnLogin.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLogin.BackgroundImage")));
             this.btnLogin.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.ForeColor = System.Drawing.Color.Black;
-            this.btnLogin.Location = new System.Drawing.Point(443, 232);
+            this.btnLogin.ForeColor = System.Drawing.Color.LightCoral;
+            this.btnLogin.Location = new System.Drawing.Point(863, 420);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(127, 49);
             this.btnLogin.TabIndex = 0;
-            this.btnLogin.Text = "Login\r\n";
+            this.btnLogin.Text = "Cadastro";
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
@@ -61,63 +67,127 @@
             // lblName
             // 
             this.lblName.AutoSize = true;
+            this.lblName.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.lblName.Font = new System.Drawing.Font("Lucida Bright", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(9, 12);
+            this.lblName.Location = new System.Drawing.Point(12, 10);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(107, 15);
             this.lblName.TabIndex = 2;
             this.lblName.Text = "Nome completo";
             this.lblName.Click += new System.EventHandler(this.Nome_Click);
             // 
-            // lblStyle
+            // ckbClient
             // 
-            this.lblStyle.AutoSize = true;
-            this.lblStyle.Font = new System.Drawing.Font("Lucida Bright", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStyle.Location = new System.Drawing.Point(9, 72);
-            this.lblStyle.Name = "lblStyle";
-            this.lblStyle.Size = new System.Drawing.Size(42, 15);
-            this.lblStyle.TabIndex = 3;
-            this.lblStyle.Text = "Estilo";
+            this.ckbClient.AutoSize = true;
+            this.ckbClient.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ckbClient.Font = new System.Drawing.Font("Lucida Bright", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckbClient.Location = new System.Drawing.Point(12, 321);
+            this.ckbClient.Name = "ckbClient";
+            this.ckbClient.Size = new System.Drawing.Size(70, 19);
+            this.ckbClient.TabIndex = 5;
+            this.ckbClient.Text = "Cliente";
+            this.ckbClient.UseVisualStyleBackColor = false;
             // 
-            // txbStyle
+            // ckbSeller
             // 
-            this.txbStyle.Location = new System.Drawing.Point(12, 88);
-            this.txbStyle.Name = "txbStyle";
-            this.txbStyle.Size = new System.Drawing.Size(229, 20);
-            this.txbStyle.TabIndex = 4;
+            this.ckbSeller.AutoSize = true;
+            this.ckbSeller.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ckbSeller.Font = new System.Drawing.Font("Lucida Bright", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckbSeller.Location = new System.Drawing.Point(12, 346);
+            this.ckbSeller.Name = "ckbSeller";
+            this.ckbSeller.Size = new System.Drawing.Size(87, 19);
+            this.ckbSeller.TabIndex = 6;
+            this.ckbSeller.Text = "Vendedor";
+            this.ckbSeller.UseVisualStyleBackColor = false;
             // 
-            // checkBox1
+            // ckbServiceterms
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Lucida Bright", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(12, 130);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(70, 19);
-            this.checkBox1.TabIndex = 5;
-            this.checkBox1.Text = "Cliente";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.ckbServiceterms.AutoSize = true;
+            this.ckbServiceterms.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ckbServiceterms.Location = new System.Drawing.Point(12, 452);
+            this.ckbServiceterms.Name = "ckbServiceterms";
+            this.ckbServiceterms.Size = new System.Drawing.Size(235, 17);
+            this.ckbServiceterms.TabIndex = 7;
+            this.ckbServiceterms.Text = "Eu li e concordo com os termos de serviço...";
+            this.ckbServiceterms.UseVisualStyleBackColor = false;
+            this.ckbServiceterms.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
             // 
-            // checkBox2
+            // lblEmail
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Font = new System.Drawing.Font("Lucida Bright", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox2.Location = new System.Drawing.Point(12, 153);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(87, 19);
-            this.checkBox2.TabIndex = 6;
-            this.checkBox2.Text = "Vendedor";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblEmail.Font = new System.Drawing.Font("Lucida Bright", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.Location = new System.Drawing.Point(12, 70);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(49, 15);
+            this.lblEmail.TabIndex = 3;
+            this.lblEmail.Text = "E-mail";
+            this.lblEmail.Click += new System.EventHandler(this.lblStyle_Click);
+            // 
+            // txbEmail
+            // 
+            this.txbEmail.Location = new System.Drawing.Point(12, 88);
+            this.txbEmail.Name = "txbEmail";
+            this.txbEmail.Size = new System.Drawing.Size(229, 20);
+            this.txbEmail.TabIndex = 4;
+            // 
+            // lblPassword
+            // 
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblPassword.Font = new System.Drawing.Font("Lucida Bright", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassword.Location = new System.Drawing.Point(12, 131);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(44, 15);
+            this.lblPassword.TabIndex = 8;
+            this.lblPassword.Text = "Senha";
+            // 
+            // txbPassword
+            // 
+            this.txbPassword.Location = new System.Drawing.Point(12, 149);
+            this.txbPassword.Name = "txbPassword";
+            this.txbPassword.PasswordChar = '*';
+            this.txbPassword.Size = new System.Drawing.Size(229, 20);
+            this.txbPassword.TabIndex = 9;
+            this.txbPassword.TextChanged += new System.EventHandler(this.txbPassword_TextChanged);
+            // 
+            // lblContat
+            // 
+            this.lblContat.AutoSize = true;
+            this.lblContat.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblContat.Font = new System.Drawing.Font("Lucida Bright", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContat.Location = new System.Drawing.Point(12, 191);
+            this.lblContat.Name = "lblContat";
+            this.lblContat.Size = new System.Drawing.Size(57, 15);
+            this.lblContat.TabIndex = 10;
+            this.lblContat.Text = "Contato";
+            // 
+            // txbContat
+            // 
+            this.txbContat.AccessibleDescription = "";
+            this.txbContat.Location = new System.Drawing.Point(12, 209);
+            this.txbContat.Name = "txbContat";
+            this.txbContat.Size = new System.Drawing.Size(229, 20);
+            this.txbContat.TabIndex = 11;
+            this.txbContat.TabStop = false;
+            this.txbContat.TextChanged += new System.EventHandler(this.txbContat_TextChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.ClientSize = new System.Drawing.Size(582, 293);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.txbStyle);
-            this.Controls.Add(this.lblStyle);
+            this.BackColor = System.Drawing.Color.PowderBlue;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(1002, 481);
+            this.Controls.Add(this.txbContat);
+            this.Controls.Add(this.lblContat);
+            this.Controls.Add(this.txbPassword);
+            this.Controls.Add(this.lblPassword);
+            this.Controls.Add(this.ckbServiceterms);
+            this.Controls.Add(this.ckbSeller);
+            this.Controls.Add(this.ckbClient);
+            this.Controls.Add(this.txbEmail);
+            this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.txbName);
             this.Controls.Add(this.btnLogin);
@@ -133,11 +203,15 @@
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.TextBox txbName;
         private System.Windows.Forms.Label lblName;
-        private System.Windows.Forms.Label lblStyle;
-        private System.Windows.Forms.TextBox txbStyle;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.CheckBox ckbClient;
+        private System.Windows.Forms.CheckBox ckbSeller;
+        private System.Windows.Forms.CheckBox ckbServiceterms;
+        private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.TextBox txbEmail;
+        private System.Windows.Forms.Label lblPassword;
+        private System.Windows.Forms.TextBox txbPassword;
+        private System.Windows.Forms.Label lblContat;
+        private System.Windows.Forms.TextBox txbContat;
     }
 }
 
