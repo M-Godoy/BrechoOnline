@@ -37,6 +37,7 @@ namespace BrechoOnline
 
             sqlCommand.ExecuteNonQuery();
 
+
             //if (ckbServiceterms.Checked)
             //{
             //    if (ckbSeller.Checked || ckbClient.Checked)
