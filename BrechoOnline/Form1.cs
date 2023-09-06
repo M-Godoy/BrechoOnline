@@ -12,6 +12,7 @@ using System.Xml.Linq;
 using System.Security.Authentication.ExtendedProtection;
 using brechoonline;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 namespace BrechoOnline
 {
@@ -30,10 +31,11 @@ namespace BrechoOnline
             sqlCommand.Connection = connection.ReturnConnection();
             sqlCommand.CommandText = "INSERT INTO Cadastro VALUES (@NOME_COMPLETO, @EMAIL, @SENHA, @CONTATO)";
 
-            sqlCommand.Parameters.AddWithValue("@NOME", txbName.Text);
+            sqlCommand.Parameters.AddWithValue("@NOME_COMPLETO", txbName.Text);
             sqlCommand.Parameters.AddWithValue("@EMAIL", txbEmail.Text);
             sqlCommand.Parameters.AddWithValue("@SENHA", txbPassword.Text);
-            sqlCommand.Parameters.AddWithValue("@CONTATO", txbContat.Text);
+            sqlCommand.Parameters.AddWithValue("@CONTATO", Convert.ToDecimal(txbContat.Text.Replace(" ","").Replace("(","").Replace(")","").Replace("-","")));
+            
 
             sqlCommand.ExecuteNonQuery();
 
@@ -47,12 +49,10 @@ namespace BrechoOnline
             //        string contact = txbContat.Text;
             //        string message = "Nome: " + name + "\nEmail: " + email + "\nContato: " + contact;
 
-            //        MessageBox.Show(
-            //            message,
-            //            "ATENÇÃO!",
-            //            MessageBoxButtons.OK,
-            //        MessageBoxIcon.Information
-            //            );
+            MessageBox.Show("Cadastro com sucesso",
+                "AVISO",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
             //    }
             //    else
             //    {
@@ -102,6 +102,32 @@ namespace BrechoOnline
         private void txbContat_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txbEmail_TextChanged(object sender, EventArgs e)
+        {
+        //    string email = "exemplo@email.com";
+
+        //    if (IsValidEmail(email))
+        //    {
+        //        Console.WriteLine("O e-mail é válido.");
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine("O e-mail não é válido.");
+        //    }
+        //}
+
+        //static bool IsValidEmail(string email)
+        //{
+        //    // Define a expressão regular para validar o e-mail.
+        //    string pattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+
+        //    // Cria um objeto Regex com o padrão.
+        //    Regex regex = new Regex(pattern);
+
+        //    // Usa o método Match para verificar se a string corresponde ao padrão.
+        //    return regex.IsMatch(email);
         }
     }
 }

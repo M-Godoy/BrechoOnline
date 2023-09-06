@@ -40,7 +40,7 @@
             this.lblPassword = new System.Windows.Forms.Label();
             this.txbPassword = new System.Windows.Forms.TextBox();
             this.lblContat = new System.Windows.Forms.Label();
-            this.txbContat = new System.Windows.Forms.TextBox();
+            this.txbContat = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // btnLogin
@@ -130,6 +130,7 @@
             this.txbEmail.Name = "txbEmail";
             this.txbEmail.Size = new System.Drawing.Size(229, 20);
             this.txbEmail.TabIndex = 4;
+            this.txbEmail.TextChanged += new System.EventHandler(this.txbEmail_TextChanged);
             // 
             // lblPassword
             // 
@@ -164,13 +165,11 @@
             // 
             // txbContat
             // 
-            this.txbContat.AccessibleDescription = "";
             this.txbContat.Location = new System.Drawing.Point(12, 209);
+            this.txbContat.Mask = "(00) 00000-0000";
             this.txbContat.Name = "txbContat";
-            this.txbContat.Size = new System.Drawing.Size(229, 20);
-            this.txbContat.TabIndex = 11;
-            this.txbContat.TabStop = false;
-            this.txbContat.TextChanged += new System.EventHandler(this.txbContat_TextChanged);
+            this.txbContat.Size = new System.Drawing.Size(100, 20);
+            this.txbContat.TabIndex = 12;
             // 
             // Form1
             // 
@@ -211,7 +210,7 @@
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.TextBox txbPassword;
         private System.Windows.Forms.Label lblContat;
-        private System.Windows.Forms.TextBox txbContat;
+        private System.Windows.Forms.MaskedTextBox txbContat;
     }
 }
 
