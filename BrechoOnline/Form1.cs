@@ -39,6 +39,21 @@ namespace BrechoOnline
 
             sqlCommand.ExecuteNonQuery();
 
+            MessageBox.Show("Cadastro com sucesso",
+              "AVISO",
+              MessageBoxButtons.OK,
+              MessageBoxIcon.Information);
+
+            txbName.Clear();
+            txbEmail.Clear();
+            txbPassword.Clear();
+            txbContat.Clear();
+
+
+
+
+
+
 
             //if (ckbServiceterms.Checked)
             //{
@@ -49,10 +64,6 @@ namespace BrechoOnline
             //        string contact = txbContat.Text;
             //        string message = "Nome: " + name + "\nEmail: " + email + "\nContato: " + contact;
 
-            MessageBox.Show("Cadastro com sucesso",
-                "AVISO",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
             //    }
             //    else
             //    {
