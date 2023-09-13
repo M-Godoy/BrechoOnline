@@ -82,6 +82,7 @@ namespace BrechoOnline
 
             sqlCommand.ExecuteNonQuery();
 
+
             MessageBox.Show("Cadastro com sucesso",
               "AVISO",
               MessageBoxButtons.OK,
