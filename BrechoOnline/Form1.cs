@@ -31,7 +31,7 @@ namespace BrechoOnline
             SqlCommand sqlCom = new SqlCommand();
 
             sqlCom.Connection = conn.ReturnConnection();
-            sqlCom.CommandText = "SELECT * FROM Student";
+            sqlCom.CommandText = "SELECT * FROM Cadastro";
 
             try
             {
@@ -40,19 +40,17 @@ namespace BrechoOnline
                 //Enquanto for possível continuar a leitura das linhas que foram retornadas na consulta, execute.
                 while (dr.Read())
                 {
-                    int id = (int)dr["Id"];
-                    string name = (string)dr["Name"];
-                    string job = (string)dr["Enrollment"];
-                    string tel = (string)dr["Telephone"];
-                    string cpf = (string)dr["Cpf"];
-                    string pass = (string)dr["Password"];
+                    int id = (int)dr["ID"];
+                    string name = (string)dr["NOME_COMPLETO"];
+                    string email = (string)dr["EMAIL"];
+                    string pass = (string)dr["SENHA"];
+                    int contat = (int)dr["CONTATO"];
 
                     ListViewItem lv = new ListViewItem(id.ToString());
                     lv.SubItems.Add(name);
-                    lv.SubItems.Add(job);
-                    lv.SubItems.Add(tel);
-                    lv.SubItems.Add(cpf);
+                    lv.SubItems.Add(email);
                     lv.SubItems.Add(pass);
+                    lv.SubItems.Add(contat.ToString());
                     listView1.Items.Add(lv);
 
                 }
@@ -94,7 +92,7 @@ namespace BrechoOnline
             txbPassword.Clear();
             txbContat.Clear();
 
-
+            UpdateListView();
 
 
 
@@ -188,7 +186,7 @@ namespace BrechoOnline
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            UpdateListView();
         }
     }
 }
