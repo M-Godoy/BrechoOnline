@@ -247,7 +247,7 @@ namespace BrechoOnline
             SqlCommand sqlCommand = new SqlCommand();
 
             sqlCommand.Connection = connection.ReturnConnection();
-            sqlCommand.CommandText = @"DELETE FROM Cadadstro WHERE ID = @id";
+            sqlCommand.CommandText = @"DELETE FROM Cadastro WHERE ID = @id";
             sqlCommand.Parameters.AddWithValue("@id", id);
             try
             {
@@ -261,6 +261,18 @@ namespace BrechoOnline
             {
                 connection.CloseConnection();
             }
+
+            MessageBox.Show("Excluído com sucesso",
+               "AVISO",
+               MessageBoxButtons.OK,
+               MessageBoxIcon.Information);
+
+            txbName.Clear();
+            txbEmail.Clear();
+            txbPassword.Clear();
+            txbContat.Clear();
+
+            UpdateListView();
         }
     }
 }
