@@ -46,6 +46,8 @@
             this.columnName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnEMAIL = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnCONTATO = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.bntEditar = new System.Windows.Forms.Button();
+            this.bntExcluir = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnLogin
@@ -183,6 +185,7 @@
             this.columnName,
             this.columnEMAIL,
             this.columnCONTATO});
+            this.listView1.FullRowSelect = true;
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(526, 12);
             this.listView1.Name = "listView1";
@@ -190,6 +193,8 @@
             this.listView1.TabIndex = 13;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            this.listView1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listView1_MouseDoubleClick);
             // 
             // columnID
             // 
@@ -207,6 +212,26 @@
             // 
             this.columnCONTATO.Text = "CONTATO";
             // 
+            // bntEditar
+            // 
+            this.bntEditar.Location = new System.Drawing.Point(700, 420);
+            this.bntEditar.Name = "bntEditar";
+            this.bntEditar.Size = new System.Drawing.Size(114, 49);
+            this.bntEditar.TabIndex = 14;
+            this.bntEditar.Text = "Editar";
+            this.bntEditar.UseVisualStyleBackColor = true;
+            this.bntEditar.Click += new System.EventHandler(this.bntEditar_Click);
+            // 
+            // bntExcluir
+            // 
+            this.bntExcluir.Location = new System.Drawing.Point(565, 420);
+            this.bntExcluir.Name = "bntExcluir";
+            this.bntExcluir.Size = new System.Drawing.Size(114, 49);
+            this.bntExcluir.TabIndex = 15;
+            this.bntExcluir.Text = "Excluir";
+            this.bntExcluir.UseVisualStyleBackColor = true;
+            this.bntExcluir.Click += new System.EventHandler(this.bntExcluir_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -214,6 +239,8 @@
             this.BackColor = System.Drawing.Color.PowderBlue;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1002, 481);
+            this.Controls.Add(this.bntExcluir);
+            this.Controls.Add(this.bntEditar);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.txbContat);
             this.Controls.Add(this.lblContat);
@@ -254,6 +281,8 @@
         private System.Windows.Forms.ColumnHeader columnName;
         private System.Windows.Forms.ColumnHeader columnEMAIL;
         private System.Windows.Forms.ColumnHeader columnCONTATO;
+        private System.Windows.Forms.Button bntEditar;
+        private System.Windows.Forms.Button bntExcluir;
     }
 }
 

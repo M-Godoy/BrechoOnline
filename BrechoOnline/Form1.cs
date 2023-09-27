@@ -13,11 +13,14 @@ using System.Security.Authentication.ExtendedProtection;
 using brechoonline;
 using System.Data.SqlClient;
 using System.Text.RegularExpressions;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace BrechoOnline
 {
     public partial class Form1 : Form
     {
+        private int id;
+
         public Form1() //Método construtor
         {
             InitializeComponent();
@@ -43,13 +46,11 @@ namespace BrechoOnline
                     int id = (int)dr["ID"];
                     string name = (string)dr["NOME_COMPLETO"];
                     string email = (string)dr["EMAIL"];
-                    string pass = (string)dr["SENHA"];
-                    int contat = (int)dr["CONTATO"];
+                    decimal contat = (decimal)dr["CONTATO"];
 
                     ListViewItem lv = new ListViewItem(id.ToString());
                     lv.SubItems.Add(name);
                     lv.SubItems.Add(email);
-                    lv.SubItems.Add(pass);
                     lv.SubItems.Add(contat.ToString());
                     listView1.Items.Add(lv);
 
@@ -188,6 +189,78 @@ namespace BrechoOnline
         private void Form1_Load(object sender, EventArgs e)
         {
             UpdateListView();
+        }
+
+        private void bntEditar_Click(object sender, EventArgs e)
+        {
+            Connection connection = new Connection();
+            SqlCommand sqlCommand = new SqlCommand();
+
+            sqlCommand.Connection = connection.ReturnConnection();
+            sqlCommand.CommandText = @"UPDATE Cadastro SET 
+            NOME_COMPLETO = @NOME_COMPLETO, 
+            EMAIL         = @EMAIL,
+            SENHA         = @SENHA, 
+            CONTATO      = @CONTATO
+            WHERE ID      = @id";
+
+            sqlCommand.Parameters.AddWithValue("@NOME_COMPLETO", txbName.Text);
+            sqlCommand.Parameters.AddWithValue("@EMAIL", txbEmail.Text);
+            sqlCommand.Parameters.AddWithValue("@SENHA", txbPassword.Text);
+            sqlCommand.Parameters.AddWithValue("@CONTATO", Convert.ToDecimal(txbContat.Text.Replace(" ", "").Replace("(", "").Replace(")", "").Replace("-", "")));
+            sqlCommand.Parameters.AddWithValue("@id", id);
+
+            sqlCommand.ExecuteNonQuery();
+
+            MessageBox.Show("Atualizado com sucesso",
+                "AVISO",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+
+            txbName.Clear();
+            txbEmail.Clear();
+            txbPassword.Clear();
+            txbContat.Clear();
+
+            UpdateListView();
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void listView1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            int index;
+            index = listView1.FocusedItem.Index;
+            id = int.Parse(listView1.Items[index].SubItems[0].Text);
+            txbName.Text = listView1.Items[index].SubItems[1].Text;
+            txbEmail.Text = listView1.Items[index].SubItems[2].Text;
+            txbContat.Text = listView1.Items[index].SubItems[3].Text;
+        }
+
+        private void bntExcluir_Click(object sender, EventArgs e)
+        {
+            //Código para excluir
+            Connection connection = new Connection();
+            SqlCommand sqlCommand = new SqlCommand();
+
+            sqlCommand.Connection = connection.ReturnConnection();
+            sqlCommand.CommandText = @"DELETE FROM Usuarios WHERE Id = @id";
+            sqlCommand.Parameters.AddWithValue("@id", id);
+            try
+            {
+                sqlCommand.ExecuteNonQuery();
+            }
+            catch (Exception err)
+            {
+                throw new Exception("Erro: Problemas ao excluir usuário no banco.\n" + err.Message);
+            }
+            finally
+            {
+                connection.CloseConnection();
+            }
         }
     }
 }
