@@ -99,7 +99,7 @@ namespace BrechoOnline
 
 
 
-
+            //Condição própria, mas não importante para o trabalho
             //if (ckbServiceterms.Checked)
             //{
             //    if (ckbSeller.Checked || ckbClient.Checked)
