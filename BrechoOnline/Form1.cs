@@ -242,37 +242,24 @@ namespace BrechoOnline
 
         private void bntExcluir_Click(object sender, EventArgs e)
         {
-            //Código para excluir
-            Connection connection = new Connection();
-            SqlCommand sqlCommand = new SqlCommand();
+            //chamando método de exclusão
+            UsuarioDAO usuarioDAO = new UsuarioDAO();
+            usuarioDAO.DeleteUser(id                                       );
 
-            sqlCommand.Connection = connection.ReturnConnection();
-            sqlCommand.CommandText = @"DELETE FROM Cadastro WHERE ID = @id";
-            sqlCommand.Parameters.AddWithValue("@id", id);
-            try
-            {
-                sqlCommand.ExecuteNonQuery();
-            }
-            catch (Exception err)
-            {
-                throw new Exception("Erro: Problemas ao excluir usuário no banco.\n" + err.Message);
-            }
-            finally
-            {
-                connection.CloseConnection();
-            }
-
-            MessageBox.Show("Excluído com sucesso",
-               "AVISO",
-               MessageBoxButtons.OK,
-               MessageBoxIcon.Information);
-
+            //limpar campos
             txbName.Clear();
             txbEmail.Clear();
             txbPassword.Clear();
             txbContat.Clear();
 
+            //atualizar listView
             UpdateListView();
+
+            //mensagem de exclusão
+            MessageBox.Show("Excluído com sucesso",
+         "AVISO",
+            MessageBoxButtons.OK,
+            MessageBoxIcon.Information);
         }
     }
 }
