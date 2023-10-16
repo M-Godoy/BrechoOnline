@@ -42,5 +42,11 @@ namespace BrechoOnline
             set { _contato = value; }
             get { return _contato; }
         }
+        public string ID
+        {
+            set { _id = value; }
+            get { return _id; }
+        }
+
     }
 }
