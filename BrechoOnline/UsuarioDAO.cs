@@ -52,7 +52,7 @@ namespace BrechoOnline
             }
             catch (Exception err)
             {
-                throw new Exception("Erro na Leitura de Dados.\n" + err.Message);
+                throw new Exception("Erro na Leitura de Dados \n" +err.Message);
             }
             finally
             {

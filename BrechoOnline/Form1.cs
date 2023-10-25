@@ -29,41 +29,25 @@ namespace BrechoOnline
         private void UpdateListView()
         {
             listView1.Items.Clear();
-
-            Connection conn = new Connection();
-            SqlCommand sqlCom = new SqlCommand();
-
-            sqlCom.Connection = conn.ReturnConnection();
-            sqlCom.CommandText = "SELECT * FROM Cadastro";
+            UsuarioDAO dadosUser = new UsuarioDAO();
+            List<Usuario> users = dadosUser.SelectUser();
 
             try
             {
-                SqlDataReader dr = sqlCom.ExecuteReader();
-
-                //Enquanto for possível continuar a leitura das linhas que foram retornadas na consulta, execute.
-                while (dr.Read())
+                foreach (Usuario user in users)
                 {
-                    int id = (int)dr["ID"];
-                    string name = (string)dr["NOME_COMPLETO"];
-                    string email = (string)dr["EMAIL"];
-                    decimal contat = (decimal)dr["CONTATO"];
 
-                    ListViewItem lv = new ListViewItem(id.ToString());
-                    lv.SubItems.Add(name);
-                    lv.SubItems.Add(email);
-                    lv.SubItems.Add(contat.ToString());
+                    ListViewItem lv = new ListViewItem(user.ID.ToString());
+                    lv.SubItems.Add(user.NOME_COMPLETO);
+                    lv.SubItems.Add(user.EMAIL);
+                    lv.SubItems.Add(user.SENHA.ToString());
+                    lv.SubItems.Add(user.CONTATO.ToString());
                     listView1.Items.Add(lv);
-
                 }
-                dr.Close();
             }
             catch (Exception err)
             {
                 MessageBox.Show(err.Message);
-            }
-            finally
-            {
-                conn.CloseConnection();
             }
         }
 
