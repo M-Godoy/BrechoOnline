@@ -1,6 +1,6 @@
 ﻿namespace BrechoOnline
 {
-    partial class Form1
+    partial class Login
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -28,12 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.btnLogin = new System.Windows.Forms.Button();
             this.txbName = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
-            this.ckbClient = new System.Windows.Forms.CheckBox();
-            this.ckbSeller = new System.Windows.Forms.CheckBox();
             this.ckbServiceterms = new System.Windows.Forms.CheckBox();
             this.lblEmail = new System.Windows.Forms.Label();
             this.txbEmail = new System.Windows.Forms.TextBox();
@@ -82,30 +80,6 @@
             this.lblName.TabIndex = 2;
             this.lblName.Text = "Nome completo";
             this.lblName.Click += new System.EventHandler(this.Nome_Click);
-            // 
-            // ckbClient
-            // 
-            this.ckbClient.AutoSize = true;
-            this.ckbClient.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ckbClient.Font = new System.Drawing.Font("Lucida Bright", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbClient.Location = new System.Drawing.Point(12, 321);
-            this.ckbClient.Name = "ckbClient";
-            this.ckbClient.Size = new System.Drawing.Size(70, 19);
-            this.ckbClient.TabIndex = 5;
-            this.ckbClient.Text = "Cliente";
-            this.ckbClient.UseVisualStyleBackColor = false;
-            // 
-            // ckbSeller
-            // 
-            this.ckbSeller.AutoSize = true;
-            this.ckbSeller.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ckbSeller.Font = new System.Drawing.Font("Lucida Bright", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbSeller.Location = new System.Drawing.Point(12, 346);
-            this.ckbSeller.Name = "ckbSeller";
-            this.ckbSeller.Size = new System.Drawing.Size(87, 19);
-            this.ckbSeller.TabIndex = 6;
-            this.ckbSeller.Text = "Vendedor";
-            this.ckbSeller.UseVisualStyleBackColor = false;
             // 
             // ckbServiceterms
             // 
@@ -232,7 +206,7 @@
             this.bntExcluir.UseVisualStyleBackColor = true;
             this.bntExcluir.Click += new System.EventHandler(this.bntExcluir_Click);
             // 
-            // Form1
+            // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -247,14 +221,12 @@
             this.Controls.Add(this.txbPassword);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.ckbServiceterms);
-            this.Controls.Add(this.ckbSeller);
-            this.Controls.Add(this.ckbClient);
             this.Controls.Add(this.txbEmail);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.txbName);
             this.Controls.Add(this.btnLogin);
-            this.Name = "Form1";
+            this.Name = "Login";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
@@ -267,8 +239,6 @@
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.TextBox txbName;
         private System.Windows.Forms.Label lblName;
-        private System.Windows.Forms.CheckBox ckbClient;
-        private System.Windows.Forms.CheckBox ckbSeller;
         private System.Windows.Forms.CheckBox ckbServiceterms;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.TextBox txbEmail;

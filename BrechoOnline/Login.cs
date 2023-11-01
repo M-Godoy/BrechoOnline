@@ -17,11 +17,11 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace BrechoOnline
 {
-    public partial class Form1 : Form
+    public partial class Login : Form
     {
         private int id;
 
-        public Form1() //Método construtor
+        public Login() //Método construtor
         {
             InitializeComponent();
         }
@@ -53,25 +53,32 @@ namespace BrechoOnline
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            Connection connection = new Connection();
-            SqlCommand sqlCommand = new SqlCommand();
+            try
+            {
+                //Criar objeto da classe Usuario. 
+                //esse verde água é o nome da sua classe. 
+                Usuario user = new Usuario(
+                
+                    txbName.Text,
+                    txbEmail.Text,
+                    txbPassword.Text,
+                    Convert.ToDecimal(txbContat.Text)
+                    );
 
-            sqlCommand.Connection = connection.ReturnConnection();
-            sqlCommand.CommandText = "INSERT INTO Cadastro VALUES (@NOME_COMPLETO, @EMAIL, @SENHA, @CONTATO)";
+                //Chamando método de inserir (inserção). 
+                //UsuarioDAO nomeDoObj = new UsuarioDAO(); 
+                UsuarioDAO dadosUser = new UsuarioDAO();
+                dadosUser.InsertUser(user);
 
-            sqlCommand.Parameters.AddWithValue("@NOME_COMPLETO", txbName.Text);
-            sqlCommand.Parameters.AddWithValue("@EMAIL", txbEmail.Text);
-            sqlCommand.Parameters.AddWithValue("@SENHA", txbPassword.Text);
-            sqlCommand.Parameters.AddWithValue("@CONTATO", Convert.ToDecimal(txbContat.Text.Replace(" ","").Replace("(","").Replace(")","").Replace("-","")));
-            
-
-            sqlCommand.ExecuteNonQuery();
-
-
-            MessageBox.Show("Cadastro com sucesso",
-              "AVISO",
-              MessageBoxButtons.OK,
-              MessageBoxIcon.Information);
+                MessageBox.Show("Cadastrado com sucesso",
+                    "AVISO",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message);
+            }
 
             txbName.Clear();
             txbEmail.Clear();
@@ -83,7 +90,7 @@ namespace BrechoOnline
 
 
 
-            //Condição própria, mas não importante para o trabalho
+            ////Condição própria, mas não importante para o trabalho
             //if (ckbServiceterms.Checked)
             //{
             //    if (ckbSeller.Checked || ckbClient.Checked)
@@ -177,29 +184,33 @@ namespace BrechoOnline
 
         private void bntEditar_Click(object sender, EventArgs e)
         {
-            Connection connection = new Connection();
-            SqlCommand sqlCommand = new SqlCommand();
+            try
+            {
+                //Criar objeto da classe Usuario. 
+                //esse verde água é o nome da sua classe. 
+                Usuario user = new Usuario(
+                    id,
+                    txbName.Text,
+                    txbEmail.Text,
+                    txbPassword.Text,
+                    Convert.ToDecimal(txbContat.Text)
 
-            sqlCommand.Connection = connection.ReturnConnection();
-            sqlCommand.CommandText = @"UPDATE Cadastro SET 
-            NOME_COMPLETO = @NOME_COMPLETO, 
-            EMAIL         = @EMAIL,
-            SENHA         = @SENHA, 
-            CONTATO      = @CONTATO
-            WHERE ID      = @id";
+                    );
 
-            sqlCommand.Parameters.AddWithValue("@NOME_COMPLETO", txbName.Text);
-            sqlCommand.Parameters.AddWithValue("@EMAIL", txbEmail.Text);
-            sqlCommand.Parameters.AddWithValue("@SENHA", txbPassword.Text);
-            sqlCommand.Parameters.AddWithValue("@CONTATO", Convert.ToDecimal(txbContat.Text.Replace(" ", "").Replace("(", "").Replace(")", "").Replace("-", "")));
-            sqlCommand.Parameters.AddWithValue("@id", id);
+                //Chamando método de inserir (inserção). 
+                //UsuarioDAO nomeDoObj = new UsuarioDAO(); 
+                UsuarioDAO dadosUser = new UsuarioDAO();
+                dadosUser.UpdateUser(user);
 
-            sqlCommand.ExecuteNonQuery();
-
-            MessageBox.Show("Atualizado com sucesso",
-                "AVISO",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
+                MessageBox.Show("Atualizado com sucesso",
+                    "AVISO",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message);
+            }
 
             txbName.Clear();
             txbEmail.Clear();

@@ -27,7 +27,7 @@ namespace BrechoOnline
             SqlCommand sqlCom = new SqlCommand();
 
             sqlCom.Connection = conn.ReturnConnection();
-            sqlCom.CommandText = "SELECT * FROM Table_1";
+            sqlCom.CommandText = "SELECT * FROM Cadastro";
 
             List<Usuario> users = new List<Usuario>();
             try
@@ -42,17 +42,20 @@ namespace BrechoOnline
                         (string)dr["NOME_COMPLETO"],
                         (string)dr["EMAIL"],
                         (string)dr["SENHA"],
-                        (String)dr["CONTATO"]
+                        (decimal)dr["CONTATO"]
                         );
 
                     users.Add(objeto);
                 }
                 dr.Close();
-                
+               
+
+
             }
-            catch (Exception err)
+            catch (Exception error)
             {
-                throw new Exception("Erro na Leitura de Dados \n" +err.Message);
+                throw new Exception("Erro na Leitura de Dados \n" + error.Message);
+
             }
             finally
             {
@@ -68,9 +71,9 @@ namespace BrechoOnline
             SqlCommand sqlCommand = new SqlCommand();
 
             sqlCommand.Connection = connection.ReturnConnection();
-            sqlCommand.CommandText = @"INSERT INTO Table_1 VALUES (@id, @nome_completo, @email, @senha, @contato)";
+            sqlCommand.CommandText = @"INSERT INTO Cadastro VALUES (@nome_completo, @email, @senha, @contato)";
 
-            sqlCommand.Parameters.AddWithValue("@id", user.ID); 
+           
             sqlCommand.Parameters.AddWithValue("@nome_completo", user.NOME_COMPLETO);
             sqlCommand.Parameters.AddWithValue("@email", user.EMAIL);
             sqlCommand.Parameters.AddWithValue("@senha", user.SENHA); 
@@ -85,7 +88,7 @@ namespace BrechoOnline
             SqlCommand sqlCommand = new SqlCommand();
 
             sqlCommand.Connection = connection.ReturnConnection();
-            sqlCommand.CommandText = @"UPDATE Table_1 SET  
+            sqlCommand.CommandText = @"UPDATE Cadastro SET  
              NOME_COMPLETO      = @nome_completo,  
              EMAIL        = @email,  
              SENHA   = @senha
@@ -117,9 +120,9 @@ namespace BrechoOnline
             {
                 sqlCommand.ExecuteNonQuery();
             }
-            catch (Exception err)
+            catch (Exception error)
             {
-                throw new Exception("Erro: Problemas ao excluir usuário no banco.\n" + err.Message);
+                throw new Exception("Erro: Problemas ao excluir usuário no banco.\n" + error.Message);
             }
             finally
             {

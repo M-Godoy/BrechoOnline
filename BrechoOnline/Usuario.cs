@@ -14,9 +14,18 @@ namespace BrechoOnline
         private string _nome_completo;
         private string _email;
         private string _senha;
-        private string _contato;
+        private decimal _contato;
 
-        public Usuario(int id, string nome_completo, string email, string senha, string contato)
+        public Usuario( string nome_completo, string email, string senha, decimal contato)
+        {
+          
+            _nome_completo = nome_completo;
+            _email = email;
+            _senha = senha;
+            _contato = contato;
+        }
+
+        public Usuario(int id, string nome_completo, string email, string senha, decimal contato)
         {
             _id = id;
             _nome_completo = nome_completo;
@@ -62,11 +71,11 @@ namespace BrechoOnline
             }
             get { return _senha; }
         }
-        public string CONTATO
+        public decimal CONTATO
         {
             set
             {
-                if (string.IsNullOrEmpty(value))
+                if (string.IsNullOrEmpty(value.ToString()))
                     throw new Exception("Campo contato está vazio");
                 _contato = value;
             }
