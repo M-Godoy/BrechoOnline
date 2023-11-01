@@ -62,7 +62,7 @@ namespace BrechoOnline
                     txbName.Text,
                     txbEmail.Text,
                     txbPassword.Text,
-                    Convert.ToDecimal(txbContat.Text)
+                    Convert.ToDecimal(txbContat.Text.Replace(" ", "").Replace("(", "").Replace(")", "").Replace("-", ""))
                     );
 
                 //Chamando método de inserir (inserção). 
@@ -193,7 +193,7 @@ namespace BrechoOnline
                     txbName.Text,
                     txbEmail.Text,
                     txbPassword.Text,
-                    Convert.ToDecimal(txbContat.Text)
+                   Convert.ToDecimal(txbContat.Text.Replace(" ", "").Replace("(", "").Replace(")", "").Replace("-", ""))
 
                     );
 
