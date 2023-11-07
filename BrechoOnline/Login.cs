@@ -40,7 +40,7 @@ namespace BrechoOnline
                     ListViewItem lv = new ListViewItem(user.ID.ToString());
                     lv.SubItems.Add(user.NOME_COMPLETO);
                     lv.SubItems.Add(user.EMAIL);
-                    lv.SubItems.Add(user.SENHA.ToString());
+                 
                     lv.SubItems.Add(user.CONTATO.ToString());
                     listView1.Items.Add(lv);
                 }
@@ -189,7 +189,7 @@ namespace BrechoOnline
                 //Criar objeto da classe Usuario. 
                 //esse verde água é o nome da sua classe. 
                 Usuario user = new Usuario(
-                    id,
+                    
                     txbName.Text,
                     txbEmail.Text,
                     txbPassword.Text,
@@ -239,7 +239,8 @@ namespace BrechoOnline
         {
             //chamando método de exclusão
             UsuarioDAO usuarioDAO = new UsuarioDAO();
-            usuarioDAO.DeleteUser(id                                       );
+            usuarioDAO.DeleteUser(
+                    id);
 
             //limpar campos
             txbName.Clear();
