@@ -20,6 +20,38 @@ namespace BrechoOnline
         //(1) 
         //void é quando não tem que retornar nada. 
 
+        public bool Login(Usuario user)
+        {
+            Connection conn = new Connection();
+            SqlCommand sqlCom = new SqlCommand();
+
+            sqlCom.Connection = conn.ReturnConnection();
+            sqlCom.CommandText = "SELECT * FROM Cadastro where NOME_COMPLETO = @nome_completo and SENHA = @senha";
+
+            sqlCom.Parameters.AddWithValue("@nome_completo", user.NOME_COMPLETO);
+            sqlCom.Parameters.AddWithValue("@senha", user.SENHA);
+
+            try
+            {
+                SqlDataReader dr = sqlCom.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    dr.Close();
+                    return true;
+                }
+
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
+            finally
+            {
+
+                conn.CloseConnection();
+            }
+            return false;
+        }
         //select
         public List<Usuario> SelectUser()
         {

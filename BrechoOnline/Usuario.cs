@@ -33,6 +33,11 @@ namespace BrechoOnline
             _senha = senha;
             _contato = contato;
         }
+        public Usuario(string nome_completo, string senha)
+        {
+            _nome_completo = nome_completo;
+            _senha = senha;
+        }
 
         public int ID
         {
