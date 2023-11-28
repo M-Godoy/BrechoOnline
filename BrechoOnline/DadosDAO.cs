@@ -34,7 +34,7 @@ namespace BrechoOnline
                     (string)dr["PAIS"],
                     (string)dr["ESTADO"],
                     (string)dr["BAIRRO"],
-                    (string)dr["CIDADE"] 
+                    (string)dr["CIDADE"]
                     );
 
                     enderecos.Add(objeto);
@@ -51,6 +51,71 @@ namespace BrechoOnline
                 conn.CloseConnection();
             }
             return null;
+        }
+        public void InsertEndereco(Dados.Dado endereco)
+        {
+            //esse Connection verde água é o nome da sua classe.
+            Connection connection = new Connection();
+            SqlCommand sqlCommand = new SqlCommand();
+
+            sqlCommand.Connection = connection.ReturnConnection();
+            sqlCommand.CommandText = @"INSERT INTO Endereco VALUES (@CEP, @PAIS, @ESTADO, @BAIRRO, @CIDADE)";
+
+            sqlCommand.Parameters.AddWithValue("@CEP", endereco.Cep);
+            sqlCommand.Parameters.AddWithValue("@PAIS", endereco.Pais);
+            sqlCommand.Parameters.AddWithValue("@ESTADO", endereco.Estado);
+            sqlCommand.Parameters.AddWithValue("@BAIRRO", endereco.Bairro);
+            sqlCommand.Parameters.AddWithValue("@CIDADE", endereco.Cidade);
+
+            sqlCommand.ExecuteNonQuery();
+        }
+        public void UpdateEndereco(Dados.Dado endereco)
+        {
+            Connection connection = new Connection();
+            SqlCommand sqlCommand = new SqlCommand();
+
+            sqlCommand.Connection = connection.ReturnConnection();
+            sqlCommand.CommandText = @"UPDATE Endereco SET
+            CEP = @CEP
+            PAIS = @PAIS,
+            ESTADO = @ESTADO,
+            BAIRRO = @BAIRRO,
+            CIDADE = @CIDADE,
+            WHERE ID = @ID";
+
+            //idêntico ao do botão insert
+            sqlCommand.Parameters.AddWithValue("@CEP", endereco.Cep);
+            sqlCommand.Parameters.AddWithValue("@PAIS", endereco.Pais);
+            sqlCommand.Parameters.AddWithValue("@ESTADO", endereco.Estado);
+            sqlCommand.Parameters.AddWithValue("@BAIRRO", endereco.Bairro);
+            sqlCommand.Parameters.AddWithValue("@CIDADE", endereco.Cidade);
+            sqlCommand.Parameters.AddWithValue("@ID", endereco.Id);
+
+            sqlCommand.ExecuteNonQuery();
+        }
+        public void DeleteEndereco(int Id)
+        {
+            //Código para excluir 
+            Connection connection = new Connection();
+            SqlCommand sqlCommand = new SqlCommand();
+
+            sqlCommand.Connection = connection.ReturnConnection();
+            sqlCommand.CommandText = @"DELETE FROM Endereco WHERE ID = @ID";
+            sqlCommand.Parameters.AddWithValue("@ID", Id);
+            try
+            {
+                sqlCommand.ExecuteNonQuery();
+            }
+            catch (Exception error)
+            {
+                throw new Exception("Erro: Problemas ao excluir usuário no banco.\n" + error.Message);
+            }
+            finally
+            {
+                connection.CloseConnection();
+            }
+
+
         }
     }
 }
