@@ -35,6 +35,7 @@
             this.Cadastrar = new System.Windows.Forms.LinkLabel();
             this.btnEntrar = new System.Windows.Forms.Button();
             this.bntLimpar = new System.Windows.Forms.Button();
+            this.lblLogin = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnNome
@@ -59,20 +60,20 @@
             // 
             this.txbNome.Location = new System.Drawing.Point(300, 170);
             this.txbNome.Name = "txbNome";
-            this.txbNome.Size = new System.Drawing.Size(100, 20);
+            this.txbNome.Size = new System.Drawing.Size(175, 20);
             this.txbNome.TabIndex = 2;
             // 
             // txbSenha
             // 
             this.txbSenha.Location = new System.Drawing.Point(300, 208);
             this.txbSenha.Name = "txbSenha";
-            this.txbSenha.Size = new System.Drawing.Size(100, 20);
+            this.txbSenha.Size = new System.Drawing.Size(175, 20);
             this.txbSenha.TabIndex = 3;
             // 
             // Cadastrar
             // 
             this.Cadastrar.AutoSize = true;
-            this.Cadastrar.Location = new System.Drawing.Point(190, 245);
+            this.Cadastrar.Location = new System.Drawing.Point(190, 240);
             this.Cadastrar.Name = "Cadastrar";
             this.Cadastrar.Size = new System.Drawing.Size(49, 13);
             this.Cadastrar.TabIndex = 4;
@@ -100,11 +101,23 @@
             this.bntLimpar.UseVisualStyleBackColor = true;
             this.bntLimpar.Click += new System.EventHandler(this.bntLimpar_Click);
             // 
+            // lblLogin
+            // 
+            this.lblLogin.AutoSize = true;
+            this.lblLogin.Font = new System.Drawing.Font("Mongolian Baiti", 21.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLogin.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblLogin.Location = new System.Drawing.Point(340, 110);
+            this.lblLogin.Name = "lblLogin";
+            this.lblLogin.Size = new System.Drawing.Size(84, 30);
+            this.lblLogin.TabIndex = 7;
+            this.lblLogin.Text = "Login";
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblLogin);
             this.Controls.Add(this.bntLimpar);
             this.Controls.Add(this.btnEntrar);
             this.Controls.Add(this.Cadastrar);
@@ -128,5 +141,6 @@
         private System.Windows.Forms.LinkLabel Cadastrar;
         private System.Windows.Forms.Button btnEntrar;
         private System.Windows.Forms.Button bntLimpar;
+        private System.Windows.Forms.Label lblLogin;
     }
 }

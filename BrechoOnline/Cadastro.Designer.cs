@@ -46,6 +46,7 @@
             this.columnCONTATO = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.bntEditar = new System.Windows.Forms.Button();
             this.bntExcluir = new System.Windows.Forms.Button();
+            this.lblCadastro = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnLogin
@@ -64,7 +65,7 @@
             // 
             // txbName
             // 
-            this.txbName.Location = new System.Drawing.Point(12, 28);
+            this.txbName.Location = new System.Drawing.Point(12, 103);
             this.txbName.Name = "txbName";
             this.txbName.Size = new System.Drawing.Size(229, 20);
             this.txbName.TabIndex = 1;
@@ -74,7 +75,7 @@
             this.lblName.AutoSize = true;
             this.lblName.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.lblName.Font = new System.Drawing.Font("Lucida Bright", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(12, 10);
+            this.lblName.Location = new System.Drawing.Point(12, 85);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(107, 15);
             this.lblName.TabIndex = 2;
@@ -98,7 +99,7 @@
             this.lblEmail.AutoSize = true;
             this.lblEmail.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.lblEmail.Font = new System.Drawing.Font("Lucida Bright", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(12, 70);
+            this.lblEmail.Location = new System.Drawing.Point(12, 138);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(49, 15);
             this.lblEmail.TabIndex = 3;
@@ -107,7 +108,7 @@
             // 
             // txbEmail
             // 
-            this.txbEmail.Location = new System.Drawing.Point(12, 88);
+            this.txbEmail.Location = new System.Drawing.Point(12, 156);
             this.txbEmail.Name = "txbEmail";
             this.txbEmail.Size = new System.Drawing.Size(229, 20);
             this.txbEmail.TabIndex = 4;
@@ -118,7 +119,7 @@
             this.lblPassword.AutoSize = true;
             this.lblPassword.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.lblPassword.Font = new System.Drawing.Font("Lucida Bright", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(12, 131);
+            this.lblPassword.Location = new System.Drawing.Point(12, 190);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(44, 15);
             this.lblPassword.TabIndex = 8;
@@ -126,7 +127,7 @@
             // 
             // txbPassword
             // 
-            this.txbPassword.Location = new System.Drawing.Point(12, 149);
+            this.txbPassword.Location = new System.Drawing.Point(12, 208);
             this.txbPassword.Name = "txbPassword";
             this.txbPassword.PasswordChar = '*';
             this.txbPassword.Size = new System.Drawing.Size(229, 20);
@@ -138,7 +139,7 @@
             this.lblContat.AutoSize = true;
             this.lblContat.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.lblContat.Font = new System.Drawing.Font("Lucida Bright", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContat.Location = new System.Drawing.Point(12, 191);
+            this.lblContat.Location = new System.Drawing.Point(12, 242);
             this.lblContat.Name = "lblContat";
             this.lblContat.Size = new System.Drawing.Size(57, 15);
             this.lblContat.TabIndex = 10;
@@ -146,7 +147,7 @@
             // 
             // txbContat
             // 
-            this.txbContat.Location = new System.Drawing.Point(12, 209);
+            this.txbContat.Location = new System.Drawing.Point(12, 260);
             this.txbContat.Mask = "(00) 00000-0000";
             this.txbContat.Name = "txbContat";
             this.txbContat.Size = new System.Drawing.Size(100, 20);
@@ -206,13 +207,26 @@
             this.bntExcluir.UseVisualStyleBackColor = true;
             this.bntExcluir.Click += new System.EventHandler(this.bntExcluir_Click);
             // 
-            // Login
+            // lblCadastro
+            // 
+            this.lblCadastro.AutoSize = true;
+            this.lblCadastro.BackColor = System.Drawing.Color.Black;
+            this.lblCadastro.Font = new System.Drawing.Font("Mongolian Baiti", 21.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCadastro.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblCadastro.Location = new System.Drawing.Point(10, 12);
+            this.lblCadastro.Name = "lblCadastro";
+            this.lblCadastro.Size = new System.Drawing.Size(117, 30);
+            this.lblCadastro.TabIndex = 16;
+            this.lblCadastro.Text = "Cadastro";
+            // 
+            // Cadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PowderBlue;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1002, 481);
+            this.Controls.Add(this.lblCadastro);
             this.Controls.Add(this.bntExcluir);
             this.Controls.Add(this.bntEditar);
             this.Controls.Add(this.listView1);
@@ -226,7 +240,7 @@
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.txbName);
             this.Controls.Add(this.btnLogin);
-            this.Name = "Login";
+            this.Name = "Cadastro";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
@@ -253,6 +267,7 @@
         private System.Windows.Forms.ColumnHeader columnCONTATO;
         private System.Windows.Forms.Button bntEditar;
         private System.Windows.Forms.Button bntExcluir;
+        private System.Windows.Forms.Label lblCadastro;
     }
 }
 

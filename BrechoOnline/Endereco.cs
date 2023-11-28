@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using static BrechoOnline.Dados;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
@@ -147,6 +148,23 @@ namespace BrechoOnline
             txbEstado.Text = ListView1.Items[index].SubItems[2].Text;
             txbBairro.Text = ListView1.Items[index].SubItems[4].Text;
             txbCidade.Text = ListView1.Items[index].SubItems[3].Text;
+        }
+
+        private void listView1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            int index;
+            index = ListView1.FocusedItem.Index;
+            Id = int.Parse(ListView1.Items[index].SubItems[0].Text);
+            txbCEP.Text = (ListView1.Items[index].SubItems[5].Text);
+            txbPais.Text = ListView1.Items[index].SubItems[1].Text;
+            txbEstado.Text = ListView1.Items[index].SubItems[2].Text;
+            txbBairro.Text = ListView1.Items[index].SubItems[4].Text;
+            txbCidade.Text = ListView1.Items[index].SubItems[3].Text;
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+
         }
     }
 }

@@ -21,5 +21,10 @@ namespace BrechoOnline
         {
 
         }
+
+        private void Enderecar_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
     }
 }
