@@ -1,5 +1,6 @@
 ﻿using brechoonline;
 using BrechoOnline;
+using Loja_De_Roupas;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -108,7 +109,7 @@ namespace BrechoOnline
            
             sqlCommand.Parameters.AddWithValue("@nome_completo", user.NOME_COMPLETO);
             sqlCommand.Parameters.AddWithValue("@email", user.EMAIL);
-            sqlCommand.Parameters.AddWithValue("@senha", user.SENHA); 
+            sqlCommand.Parameters.AddWithValue("@senha", Senha.Sha256(user.SENHA)); 
             sqlCommand.Parameters.AddWithValue("@contato", user.CONTATO);
 
             sqlCommand.ExecuteNonQuery();
@@ -132,7 +133,7 @@ namespace BrechoOnline
             sqlCommand.Parameters.AddWithValue("@id", user.ID);
             sqlCommand.Parameters.AddWithValue("@nome_completo", user.NOME_COMPLETO);
             sqlCommand.Parameters.AddWithValue("@email", user.EMAIL);
-            sqlCommand.Parameters.AddWithValue("@senha", user.SENHA);
+            sqlCommand.Parameters.AddWithValue("@senha", Senha.Sha256(user.SENHA));
             sqlCommand.Parameters.AddWithValue("@contato", user.CONTATO);
 
 

@@ -30,7 +30,7 @@ namespace BrechoOnline
                 {
                     Dados.Dado objeto = new Dados.Dado(
                     (int)dr["ID"],
-                    (int)dr["CEP"],
+                    (decimal)dr["CEP"],
                     (string)dr["PAIS"],
                     (string)dr["ESTADO"],
                     (string)dr["CIDADE"],
@@ -76,11 +76,11 @@ namespace BrechoOnline
 
             sqlCommand.Connection = connection.ReturnConnection();
             sqlCommand.CommandText = @"UPDATE Endereco SET
-            CEP = @CEP
+            CEP = @CEP,
             PAIS = @PAIS,
             ESTADO = @ESTADO,
             CIDADE = @CIDADE,
-            BAIRRO = @BAIRRO,
+            BAIRRO = @BAIRRO
             WHERE ID = @ID";
 
             //idêntico ao do botão insert

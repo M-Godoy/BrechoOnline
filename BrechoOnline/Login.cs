@@ -50,6 +50,16 @@ namespace BrechoOnline
             txbNome.Clear();
             txbSenha.Clear();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txbSenha_TextChanged(object sender, EventArgs e)
+        {
+            txbSenha.Text = new string('*', txbSenha.Text.Length);
+        }
     }
 }
     

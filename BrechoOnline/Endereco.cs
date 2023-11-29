@@ -86,7 +86,7 @@ namespace BrechoOnline
             UpdateListView();
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
+        private void bntEditarEnderco_Click(object sender, EventArgs e)
         {
             try
             {
@@ -123,7 +123,7 @@ namespace BrechoOnline
             UpdateListView();
         }
 
-        private void btnExcluir_Click(object sender, EventArgs e)
+        private void bntExcluirEndereco_Click(object sender, EventArgs e)
         {
             //Chamando método de exclussão
             DadosDAO dado = new DadosDAO();
@@ -169,6 +169,12 @@ namespace BrechoOnline
         private void Endereco_Load(object sender, EventArgs e)
         {
             UpdateListView();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            TelaPrincipal tela = new TelaPrincipal();
+            tela.ShowDialog();
         }
     }
 }

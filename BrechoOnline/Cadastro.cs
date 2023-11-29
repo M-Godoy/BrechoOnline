@@ -14,6 +14,7 @@ using brechoonline;
 using System.Data.SqlClient;
 using System.Text.RegularExpressions;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Security.Cryptography;
 
 namespace BrechoOnline
 {
@@ -143,7 +144,7 @@ namespace BrechoOnline
 
         private void txbPassword_TextChanged(object sender, EventArgs e)
         {
-
+            txbPassword.Text = new string('*', txbPassword.Text.Length);
         }
 
         private void txbContat_TextChanged(object sender, EventArgs e)
@@ -256,6 +257,27 @@ namespace BrechoOnline
          "AVISO",
             MessageBoxButtons.OK,
             MessageBoxIcon.Information);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Login tela = new Login();
+            tela.ShowDialog();
+        }
+
+        private void radioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            // Manipula o evento quando o estado de um RadioButton é alterado
+            RadioButton radioButton = (RadioButton)sender;
+
+            if (radioButton.Checked)
+            {
+                MessageBox.Show($"Você selecionou: {radioButton.Text}");
+            }
+        }
+        private void ckbServiceterms_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

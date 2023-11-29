@@ -47,6 +47,9 @@
             this.bntExcluir = new System.Windows.Forms.Button();
             this.lblCadastro = new System.Windows.Forms.Label();
             this.ckbServiceterms = new System.Windows.Forms.CheckBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // btnLogin
@@ -150,7 +153,7 @@
             this.columnCONTATO});
             this.listView1.FullRowSelect = true;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(526, 12);
+            this.listView1.Location = new System.Drawing.Point(526, 45);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(464, 353);
             this.listView1.TabIndex = 13;
@@ -179,7 +182,7 @@
             // 
             this.bntEditar.BackColor = System.Drawing.Color.Salmon;
             this.bntEditar.Font = new System.Drawing.Font("Miriam CLM", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.bntEditar.Location = new System.Drawing.Point(700, 420);
+            this.bntEditar.Location = new System.Drawing.Point(743, 420);
             this.bntEditar.Name = "bntEditar";
             this.bntEditar.Size = new System.Drawing.Size(114, 49);
             this.bntEditar.TabIndex = 14;
@@ -191,7 +194,7 @@
             // 
             this.bntExcluir.BackColor = System.Drawing.Color.Salmon;
             this.bntExcluir.Font = new System.Drawing.Font("Miriam CLM", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.bntExcluir.Location = new System.Drawing.Point(565, 420);
+            this.bntExcluir.Location = new System.Drawing.Point(623, 421);
             this.bntExcluir.Name = "bntExcluir";
             this.bntExcluir.Size = new System.Drawing.Size(114, 49);
             this.bntExcluir.TabIndex = 15;
@@ -222,6 +225,45 @@
             this.ckbServiceterms.TabIndex = 18;
             this.ckbServiceterms.Text = "Eu li e concordo com os termos de serviço...";
             this.ckbServiceterms.UseVisualStyleBackColor = false;
+            this.ckbServiceterms.CheckedChanged += new System.EventHandler(this.ckbServiceterms_CheckedChanged);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Red;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button1.Font = new System.Drawing.Font("Miriam CLM", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button1.Location = new System.Drawing.Point(952, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(38, 28);
+            this.button1.TabIndex = 19;
+            this.button1.Text = "X";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.BackColor = System.Drawing.SystemColors.Window;
+            this.radioButton1.Location = new System.Drawing.Point(12, 371);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(71, 17);
+            this.radioButton1.TabIndex = 20;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Vendedor";
+            this.radioButton1.UseVisualStyleBackColor = false;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.BackColor = System.Drawing.SystemColors.Window;
+            this.radioButton2.Location = new System.Drawing.Point(12, 394);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(76, 17);
+            this.radioButton2.TabIndex = 21;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Comprador";
+            this.radioButton2.UseVisualStyleBackColor = false;
             // 
             // Cadastro
             // 
@@ -230,6 +272,9 @@
             this.BackColor = System.Drawing.Color.PowderBlue;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1002, 481);
+            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.ckbServiceterms);
             this.Controls.Add(this.lblCadastro);
             this.Controls.Add(this.bntExcluir);
@@ -272,6 +317,9 @@
         private System.Windows.Forms.Button bntExcluir;
         private System.Windows.Forms.Label lblCadastro;
         private System.Windows.Forms.CheckBox ckbServiceterms;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButton2;
     }
 }
 
