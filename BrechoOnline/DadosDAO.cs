@@ -79,8 +79,8 @@ namespace BrechoOnline
             CEP = @CEP
             PAIS = @PAIS,
             ESTADO = @ESTADO,
-            BAIRRO = @BAIRRO,
             CIDADE = @CIDADE,
+            BAIRRO = @BAIRRO,
             WHERE ID = @ID";
 
             //idêntico ao do botão insert

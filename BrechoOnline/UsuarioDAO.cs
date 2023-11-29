@@ -123,7 +123,7 @@ namespace BrechoOnline
             sqlCommand.CommandText = @"UPDATE Cadastro SET  
              NOME_COMPLETO = @nome_completo,  
              EMAIL = @email,  
-             SENHA = @senha
+             SENHA = @senha,
              CONTATO = @contato
              WHERE ID = @id";
 
