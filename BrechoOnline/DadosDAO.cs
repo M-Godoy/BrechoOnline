@@ -33,8 +33,8 @@ namespace BrechoOnline
                     (int)dr["CEP"],
                     (string)dr["PAIS"],
                     (string)dr["ESTADO"],
-                    (string)dr["BAIRRO"],
-                    (string)dr["CIDADE"]
+                    (string)dr["CIDADE"],
+                    (string)dr["BAIRRO"]
                     );
 
                     enderecos.Add(objeto);
@@ -64,8 +64,8 @@ namespace BrechoOnline
             sqlCommand.Parameters.AddWithValue("@CEP", endereco.Cep);
             sqlCommand.Parameters.AddWithValue("@PAIS", endereco.Pais);
             sqlCommand.Parameters.AddWithValue("@ESTADO", endereco.Estado);
-            sqlCommand.Parameters.AddWithValue("@BAIRRO", endereco.Bairro);
             sqlCommand.Parameters.AddWithValue("@CIDADE", endereco.Cidade);
+            sqlCommand.Parameters.AddWithValue("@BAIRRO", endereco.Bairro);
 
             sqlCommand.ExecuteNonQuery();
         }
@@ -87,8 +87,8 @@ namespace BrechoOnline
             sqlCommand.Parameters.AddWithValue("@CEP", endereco.Cep);
             sqlCommand.Parameters.AddWithValue("@PAIS", endereco.Pais);
             sqlCommand.Parameters.AddWithValue("@ESTADO", endereco.Estado);
-            sqlCommand.Parameters.AddWithValue("@BAIRRO", endereco.Bairro);
             sqlCommand.Parameters.AddWithValue("@CIDADE", endereco.Cidade);
+            sqlCommand.Parameters.AddWithValue("@BAIRRO", endereco.Bairro);
             sqlCommand.Parameters.AddWithValue("@ID", endereco.Id);
 
             sqlCommand.ExecuteNonQuery();

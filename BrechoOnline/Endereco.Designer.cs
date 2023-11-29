@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing.Printing;
 
 namespace BrechoOnline
 {
@@ -44,8 +45,14 @@ namespace BrechoOnline
             this.bntEditarEnderco = new System.Windows.Forms.Button();
             this.bntSalvarEndereco = new System.Windows.Forms.Button();
             this.ListView1 = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.lblEndereco = new System.Windows.Forms.Label();
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // bntCEP
@@ -77,7 +84,7 @@ namespace BrechoOnline
             // 
             // bntBairro
             // 
-            this.bntBairro.Location = new System.Drawing.Point(12, 238);
+            this.bntBairro.Location = new System.Drawing.Point(12, 293);
             this.bntBairro.Name = "bntBairro";
             this.bntBairro.Size = new System.Drawing.Size(75, 23);
             this.bntBairro.TabIndex = 3;
@@ -86,7 +93,7 @@ namespace BrechoOnline
             // 
             // bntCidade
             // 
-            this.bntCidade.Location = new System.Drawing.Point(12, 293);
+            this.bntCidade.Location = new System.Drawing.Point(12, 238);
             this.bntCidade.Name = "bntCidade";
             this.bntCidade.Size = new System.Drawing.Size(75, 23);
             this.bntCidade.TabIndex = 4;
@@ -116,14 +123,14 @@ namespace BrechoOnline
             // 
             // txbBairro
             // 
-            this.txbBairro.Location = new System.Drawing.Point(12, 267);
+            this.txbBairro.Location = new System.Drawing.Point(12, 322);
             this.txbBairro.Name = "txbBairro";
             this.txbBairro.Size = new System.Drawing.Size(175, 20);
             this.txbBairro.TabIndex = 8;
             // 
             // txbCidade
             // 
-            this.txbCidade.Location = new System.Drawing.Point(12, 322);
+            this.txbCidade.Location = new System.Drawing.Point(12, 267);
             this.txbCidade.Name = "txbCidade";
             this.txbCidade.Size = new System.Drawing.Size(175, 20);
             this.txbCidade.TabIndex = 9;
@@ -154,20 +161,46 @@ namespace BrechoOnline
             this.bntSalvarEndereco.TabIndex = 12;
             this.bntSalvarEndereco.Text = "Salvar";
             this.bntSalvarEndereco.UseVisualStyleBackColor = true;
+            this.bntSalvarEndereco.Click += new System.EventHandler(this.bntSalvarEndereco_Click);
             // 
             // ListView1
             // 
+            this.ListView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader6,
+            this.columnHeader7});
             this.ListView1.HideSelection = false;
             this.ListView1.Location = new System.Drawing.Point(342, 73);
             this.ListView1.Name = "ListView1";
             this.ListView1.Size = new System.Drawing.Size(446, 289);
             this.ListView1.TabIndex = 13;
             this.ListView1.UseCompatibleStateImageBehavior = false;
+            this.ListView1.View = System.Windows.Forms.View.Details;
             this.ListView1.SelectedIndexChanged += new System.EventHandler(this.ListView1_SelectedIndexChanged);
+            this.ListView1.DoubleClick += new System.EventHandler(this.ListView1_DoubleClick);
             // 
-            // printDocument1
+            // columnHeader1
             // 
-            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            this.columnHeader1.Text = "ID";
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "CEP";
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "País";
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Estado";
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Cidade";
             // 
             // lblEndereco
             // 
@@ -180,6 +213,10 @@ namespace BrechoOnline
             this.lblEndereco.TabIndex = 14;
             this.lblEndereco.Text = "Endereço";
             this.lblEndereco.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Bairro";
             // 
             // Endereco
             // 
@@ -203,6 +240,7 @@ namespace BrechoOnline
             this.Controls.Add(this.bntCEP);
             this.Name = "Endereco";
             this.Text = "Endereço";
+            this.Load += new System.EventHandler(this.Endereco_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -226,6 +264,13 @@ namespace BrechoOnline
         private System.Windows.Forms.ListView ListView1;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.Label lblEndereco;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private PrintPageEventHandler printDocument1_PrintPage;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
 
         public EventHandler Endereco_Load { get; private set; }
     }

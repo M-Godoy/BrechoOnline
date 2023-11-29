@@ -12,14 +12,14 @@ namespace BrechoOnline
         internal class Dado
         {
             private int _id;
-            private int _cep;
+            private decimal _cep;
             private string _pais;
             private string _estado;
             private string _bairro;
             private string _cidade;
             
 
-            public Dado(int cep, string pais, string estado, string bairro, string cidade)
+            public Dado(decimal cep, string pais, string estado, string bairro, string cidade)
             {
                 _cep = cep;
                 _pais = pais;
@@ -30,7 +30,7 @@ namespace BrechoOnline
                
             }
 
-            public Dado (int id, int cep, string pais, string estado, string bairro, string cidade)
+            public Dado (int id, decimal cep, string pais, string estado, string bairro, string cidade)
             {
                 _id = id;
                 _cep = cep;
@@ -47,7 +47,7 @@ namespace BrechoOnline
                 get { return _id; }
             }
 
-            public int Cep
+            public decimal Cep
             {
                 set { _cep = value; }
                 get { return _cep; }

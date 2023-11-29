@@ -28,16 +28,20 @@ namespace BrechoOnline
 
             try
             {
-                foreach (Dados.Dado endereco in enderecos)
+                if (enderecos != null && enderecos.Count > 0)
                 {
 
-                    ListViewItem lv2 = new ListViewItem(endereco.Id.ToString());
-                    lv2.SubItems.Add(endereco.Cep.ToString());
-                    lv2.SubItems.Add(endereco.Pais);
-                    lv2.SubItems.Add(endereco.Estado);
-                    lv2.SubItems.Add(endereco.Bairro);
-                    lv2.SubItems.Add(endereco.Cidade);
-                    ListView1.Items.Add(lv2);
+                    foreach (Dados.Dado endereco in enderecos)
+                    {
+
+                        ListViewItem lv2 = new ListViewItem(endereco.Id.ToString());
+                        lv2.SubItems.Add(endereco.Cep.ToString());
+                        lv2.SubItems.Add(endereco.Pais);
+                        lv2.SubItems.Add(endereco.Estado);
+                        lv2.SubItems.Add(endereco.Cidade);
+                        lv2.SubItems.Add(endereco.Bairro);
+                        ListView1.Items.Add(lv2);
+                    }
                 }
             }
             catch (Exception err)
@@ -46,17 +50,17 @@ namespace BrechoOnline
             }
         }
 
-        private void bntSalvar(object sender, EventArgs e)
+        private void bntSalvarEndereco_Click(object sender, EventArgs e)
         {
             try
             {
                 //esse verde água é o nome da sua classe.
                 Dados.Dado endereco = new Dados.Dado(
-                    Convert.ToInt16(txbCEP.Text),
+                    Convert.ToDecimal(txbCEP.Text),
                     txbPais.Text,
                     txbEstado.Text,
-                    txbBairro.Text,
-                    txbCidade.Text
+                    txbCidade.Text,
+                    txbBairro.Text
                     );
 
                 //Chamando método de inserir (inserção).
@@ -76,8 +80,8 @@ namespace BrechoOnline
             txbCEP.Clear();
             txbPais.Clear();
             txbEstado.Clear();
-            txbBairro.Clear();
             txbCidade.Clear();
+            txbBairro.Clear();
 
             UpdateListView();
         }
@@ -92,8 +96,8 @@ namespace BrechoOnline
                     Convert.ToInt16(txbCEP.Text),
                     txbPais.Text,
                     txbEstado.Text,
-                    txbBairro.Text,
-                    txbCidade.Text
+                    txbCidade.Text,
+                    txbBairro.Text
                     );
 
                 //Chamando método de inserir (inserção).
@@ -114,8 +118,8 @@ namespace BrechoOnline
             txbCEP.Clear();
             txbPais.Clear();
             txbEstado.Clear();
-            txbBairro.Clear();
             txbCidade.Clear();
+            txbBairro.Clear();
             UpdateListView();
         }
 
@@ -133,8 +137,8 @@ namespace BrechoOnline
             txbCEP.Clear();
             txbPais.Clear();
             txbEstado.Clear();
-            txbBairro.Clear();
             txbCidade.Clear();
+            txbBairro.Clear();
             UpdateListView();
         }
 
@@ -146,11 +150,11 @@ namespace BrechoOnline
             txbCEP.Text = (ListView1.Items[index].SubItems[5].Text);
             txbPais.Text = ListView1.Items[index].SubItems[1].Text;
             txbEstado.Text = ListView1.Items[index].SubItems[2].Text;
-            txbBairro.Text = ListView1.Items[index].SubItems[4].Text;
             txbCidade.Text = ListView1.Items[index].SubItems[3].Text;
+            txbBairro.Text = ListView1.Items[index].SubItems[4].Text;
         }
 
-        private void listView1_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void ListView1_DoubleClick(object sender, EventArgs e)
         {
             int index;
             index = ListView1.FocusedItem.Index;
@@ -158,13 +162,13 @@ namespace BrechoOnline
             txbCEP.Text = (ListView1.Items[index].SubItems[5].Text);
             txbPais.Text = ListView1.Items[index].SubItems[1].Text;
             txbEstado.Text = ListView1.Items[index].SubItems[2].Text;
-            txbBairro.Text = ListView1.Items[index].SubItems[4].Text;
             txbCidade.Text = ListView1.Items[index].SubItems[3].Text;
+            txbBairro.Text = ListView1.Items[index].SubItems[4].Text;
         }
 
-        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        private void Endereco_Load(object sender, EventArgs e)
         {
-
+            UpdateListView();
         }
     }
 }
