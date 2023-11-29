@@ -31,6 +31,7 @@ namespace BrechoOnline
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Endereco));
             this.bntCEP = new System.Windows.Forms.Button();
             this.bntPais = new System.Windows.Forms.Button();
             this.bntEstado = new System.Windows.Forms.Button();
@@ -50,9 +51,9 @@ namespace BrechoOnline
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.lblEndereco = new System.Windows.Forms.Label();
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // bntCEP
@@ -202,6 +203,10 @@ namespace BrechoOnline
             // 
             this.columnHeader6.Text = "Cidade";
             // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Bairro";
+            // 
             // lblEndereco
             // 
             this.lblEndereco.AutoSize = true;
@@ -214,14 +219,11 @@ namespace BrechoOnline
             this.lblEndereco.Text = "Endereço";
             this.lblEndereco.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Bairro";
-            // 
             // Endereco
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.lblEndereco);
             this.Controls.Add(this.ListView1);

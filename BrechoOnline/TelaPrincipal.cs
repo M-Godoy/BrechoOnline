@@ -27,5 +27,16 @@ namespace BrechoOnline
            Endereco tela = new Endereco();
             tela.ShowDialog();
         }
+
+        private void lblTelaPrincipal_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Sair_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Login tela = new Login();
+            tela.ShowDialog();
+        }
     }
 }
