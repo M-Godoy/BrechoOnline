@@ -269,9 +269,8 @@ namespace BrechoOnline
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader6;
-        private PrintPageEventHandler printDocument1_PrintPage;
         private System.Windows.Forms.ColumnHeader columnHeader7;
 
-        public EventHandler Endereco_Load { get; private set; }
+    
     }
 }

@@ -59,7 +59,7 @@ namespace BrechoOnline
             SqlCommand sqlCommand = new SqlCommand();
 
             sqlCommand.Connection = connection.ReturnConnection();
-            sqlCommand.CommandText = @"INSERT INTO Endereco VALUES (@CEP, @PAIS, @ESTADO, @BAIRRO, @CIDADE)";
+            sqlCommand.CommandText = @"INSERT INTO Endereco VALUES (@CEP, @PAIS, @ESTADO, @CIDADE, @BAIRRO)";
 
             sqlCommand.Parameters.AddWithValue("@CEP", endereco.Cep);
             sqlCommand.Parameters.AddWithValue("@PAIS", endereco.Pais);

@@ -93,7 +93,7 @@ namespace BrechoOnline
                 //esse verde água é o nome da sua classe.
                 Dados.Dado endereco = new Dados.Dado(
                     Id,
-                    Convert.ToInt16(txbCEP.Text),
+                    Convert.ToDecimal(txbCEP.Text),
                     txbPais.Text,
                     txbEstado.Text,
                     txbCidade.Text,
@@ -147,11 +147,11 @@ namespace BrechoOnline
             int index;
             index = ListView1.FocusedItem.Index;
             Id = int.Parse(ListView1.Items[index].SubItems[0].Text);
-            txbCEP.Text = (ListView1.Items[index].SubItems[5].Text);
-            txbPais.Text = ListView1.Items[index].SubItems[1].Text;
-            txbEstado.Text = ListView1.Items[index].SubItems[2].Text;
-            txbCidade.Text = ListView1.Items[index].SubItems[3].Text;
-            txbBairro.Text = ListView1.Items[index].SubItems[4].Text;
+            txbCEP.Text = (ListView1.Items[index].SubItems[1].Text);
+            txbPais.Text = ListView1.Items[index].SubItems[2].Text;
+            txbEstado.Text = ListView1.Items[index].SubItems[3].Text;
+            txbCidade.Text = ListView1.Items[index].SubItems[4].Text;
+            txbBairro.Text = ListView1.Items[index].SubItems[5].Text;
         }
 
         private void ListView1_DoubleClick(object sender, EventArgs e)
@@ -159,11 +159,11 @@ namespace BrechoOnline
             int index;
             index = ListView1.FocusedItem.Index;
             Id = int.Parse(ListView1.Items[index].SubItems[0].Text);
-            txbCEP.Text = (ListView1.Items[index].SubItems[5].Text);
-            txbPais.Text = ListView1.Items[index].SubItems[1].Text;
-            txbEstado.Text = ListView1.Items[index].SubItems[2].Text;
-            txbCidade.Text = ListView1.Items[index].SubItems[3].Text;
-            txbBairro.Text = ListView1.Items[index].SubItems[4].Text;
+            txbCEP.Text = (ListView1.Items[index].SubItems[1].Text);
+            txbPais.Text = ListView1.Items[index].SubItems[2].Text;
+            txbEstado.Text = ListView1.Items[index].SubItems[3].Text;
+            txbCidade.Text = ListView1.Items[index].SubItems[4].Text;
+            txbBairro.Text = ListView1.Items[index].SubItems[5].Text;
         }
 
         private void Endereco_Load(object sender, EventArgs e)

@@ -121,11 +121,11 @@ namespace BrechoOnline
 
             sqlCommand.Connection = connection.ReturnConnection();
             sqlCommand.CommandText = @"UPDATE Cadastro SET  
-             NOME_COMPLETO      = @nome_completo,  
-             EMAIL        = @email,  
-             SENHA   = @senha
+             NOME_COMPLETO = @nome_completo,  
+             EMAIL = @email,  
+             SENHA = @senha
              CONTATO = @contato
-             WHERE ID   = @id";
+             WHERE ID = @id";
 
             //idêntico ao do botão insert 
 

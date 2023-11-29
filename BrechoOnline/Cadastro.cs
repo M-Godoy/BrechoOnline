@@ -189,13 +189,13 @@ namespace BrechoOnline
                 //Criar objeto da classe Usuario. 
                 //esse verde água é o nome da sua classe. 
                 Usuario user = new Usuario(
-                    
+
                     txbName.Text,
                     txbEmail.Text,
                     txbPassword.Text,
-                   Convert.ToDecimal(txbContat.Text.Replace(" ", "").Replace("(", "").Replace(")", "").Replace("-", ""))
+                    Convert.ToDecimal(txbContat.Text.Replace(" ", "").Replace("(", "").Replace(")", "").Replace("-", ""))
 
-                    );
+                    ) ;
 
                 //Chamando método de inserir (inserção). 
                 //UsuarioDAO nomeDoObj = new UsuarioDAO(); 
