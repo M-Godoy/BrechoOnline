@@ -21,9 +21,11 @@ namespace BrechoOnline
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
+            string hashPassL = Senha.Sha256(txbSenha.Text);
+
             Usuario user = new Usuario(
-                txbNome.Text, txbSenha.Text
-                );
+                txbNome.Text, hashPassL
+                ) ;
 
             //inserir dado
             UsuarioDAO dadosUser = new UsuarioDAO();

@@ -84,12 +84,13 @@ namespace BrechoOnline
             WHERE ID = @ID";
 
             //idêntico ao do botão insert
+            sqlCommand.Parameters.AddWithValue("@ID", endereco.Id);
             sqlCommand.Parameters.AddWithValue("@CEP", endereco.Cep);
             sqlCommand.Parameters.AddWithValue("@PAIS", endereco.Pais);
             sqlCommand.Parameters.AddWithValue("@ESTADO", endereco.Estado);
             sqlCommand.Parameters.AddWithValue("@CIDADE", endereco.Cidade);
             sqlCommand.Parameters.AddWithValue("@BAIRRO", endereco.Bairro);
-            sqlCommand.Parameters.AddWithValue("@ID", endereco.Id);
+
 
             sqlCommand.ExecuteNonQuery();
         }

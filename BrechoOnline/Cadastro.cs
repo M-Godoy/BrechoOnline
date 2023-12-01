@@ -190,7 +190,7 @@ namespace BrechoOnline
                 //Criar objeto da classe Usuario. 
                 //esse verde água é o nome da sua classe. 
                 Usuario user = new Usuario(
-
+                    id,
                     txbName.Text,
                     txbEmail.Text,
                     txbPassword.Text,
@@ -198,7 +198,6 @@ namespace BrechoOnline
 
                     ) ;
 
-                //Chamando método de inserir (inserção). 
                 //UsuarioDAO nomeDoObj = new UsuarioDAO(); 
                 UsuarioDAO dadosUser = new UsuarioDAO();
                 dadosUser.UpdateUser(user);

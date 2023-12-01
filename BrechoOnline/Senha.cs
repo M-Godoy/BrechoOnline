@@ -3,7 +3,7 @@ using System.IO;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace Loja_De_Roupas
+namespace BrechoOnline
 {
     public static class Senha
     {

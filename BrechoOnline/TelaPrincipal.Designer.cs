@@ -41,7 +41,6 @@
             this.Enderecar = new System.Windows.Forms.LinkLabel();
             this.Sair = new System.Windows.Forms.LinkLabel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -186,7 +185,6 @@
             this.panel1.AutoScrollMargin = new System.Drawing.Size(250, 200);
             this.panel1.BackColor = System.Drawing.Color.MistyRose;
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.Controls.Add(this.radioButton1);
             this.panel1.Controls.Add(this.pictureBox7);
             this.panel1.Controls.Add(this.monthCalendar1);
             this.panel1.Controls.Add(this.pictureBox6);
@@ -204,24 +202,13 @@
             this.panel1.TabIndex = 8;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(131, 935);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(85, 17);
-            this.radioButton1.TabIndex = 9;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "radioButton1";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
             // TelaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(749, 798);
+            this.ClientSize = new System.Drawing.Size(742, 809);
             this.Controls.Add(this.panel1);
             this.Name = "TelaPrincipal";
             this.Text = "Form2";
@@ -253,6 +240,5 @@
         private System.Windows.Forms.LinkLabel Enderecar;
         private System.Windows.Forms.LinkLabel Sair;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.RadioButton radioButton1;
     }
 }
